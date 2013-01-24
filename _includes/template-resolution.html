@@ -1,0 +1,40 @@
+<div class="content bgGreen">
+    <div class="container">
+        <a href="" id="template" name="template" class="anchor"></a>
+        <h2>Template Resolution</h2>
+        <div class="line">
+            <div class="size1of2 unit">
+{% highlight php %}
+<?php
+
+namespace App/Controller;
+
+class BlogPostsController
+{
+    public function indexAction()
+    {
+        return $this->render('App:BlogPosts:index', [
+            'blogPosts' => $this->getBlogPosts()
+        ]);
+    }
+}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit">
+{% highlight php %}
+<?php
+
+namespace App/Controller;
+
+class BlogPostsController
+{
+    public function indexAction()
+    {
+        return ['blogPosts' => $this->getBlogPosts()];
+    }
+}
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</div>
