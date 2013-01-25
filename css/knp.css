@@ -35,10 +35,10 @@ pre{background-color:#222222;}
 .bgRed h2{color:#B94A48;}
 .bgOrange{background-color:#FFA93C;border-bottom:3px solid #F4EBD2;}
 .bgOrange h2{color:#FFA93C;}
-.bgBlue{background-color:#3A87AD;border-bottom:3px solid #F4EBD2;}
-.bgBlue h2{color:#3A87AD;}
-.bgGreen{background-color:#73B573;border-bottom:3px solid #F4EBD2;}
-.bgGreen h2{color:#73B573;}
+.bgBlue{background-color:#529ab2;border-bottom:3px solid #F4EBD2;}
+.bgBlue h2{color:#529ab2;}
+.bgGreen{background-color:#669526;border-bottom:3px solid #F4EBD2;}
+.bgGreen h2{color:#669526;}
 
 /* GRIDS */
 .line,.lastUnit{overflow:hidden; *overflow:visible;*zoom:1;}
