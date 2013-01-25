@@ -4,7 +4,7 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 body{font:14px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:1.5em;}
 
 .standard pre {background-color: rgba(255, 0, 0, 0.1);}
-.rad pre {background-color: rgba(0, 255, 0, 0.1);}
+.bgBlue .rad pre {background: rgba(0, 255, 0, 0.1) url('../images/doc_stamp.png') 99% 2% no-repeat; min-height: 83px;}
 h3 {font-size: 130%;font-weight: bold;padding-top: 20px;}
 h4 {font-size: 120%;font-weight: bold;padding-top: 10px;}
 
