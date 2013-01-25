@@ -1,0 +1,24 @@
+blogpost_index:
+    pattern: '/blogposts'
+    defaults: { _controller: 'Project:BlogPosts:indexAction' }
+    requirements: { _method: 'GET' }
+
+blogpost_new:
+    pattern: '/blogposts/new'
+    defaults: { _controller: 'Project:BlogPosts:newAction' }
+    requirements: { _method: 'GET|POST' }
+
+blogpost_show:
+    pattern: '/blogposts/{id}'
+    defaults: { _controller: 'Project:BlogPosts:showAction' }
+    requirements: { _method: 'GET' }
+
+blogpost_edit:
+    pattern: '/blogposts/{id}/edit'
+    defaults: { _controller: 'Project:BlogPosts:editAction' }
+    requirements: { _method: 'GET|PUT' }
+
+blogpost_delete:
+    pattern: '/blogposts/{id}'
+    defaults: { _controller: 'Project:BlogPosts:deleteAction' }
+    requirements: { _method: 'DELETE' }
