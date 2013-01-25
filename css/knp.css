@@ -1,22 +1,21 @@
 /* reset */
 html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
 /* fonts */
-body{font:14px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 body{background-color:#1e1d1d;heitgh:100%;width:100%;color:#EAF2D9}
 .container{margin:0 auto;text-align:center;width:1170px;}
 .container:before{display:table;}
 .container:after{clear:both;display:table;}
-.header{background-color:#F4EBD2;overflow:hidden;box-shadow:0 0 15px 0 black;position:fixed;left:0;z-index:1030;width:100%;display:block;}
+.header{background-color:#F4EBD2;overflow:hidden;box-shadow:0 0 15px 0 black;-moz-box-shadow:0 0 15px 0 black;-webkit-box-shadow:0 0 15px 0 black;position:fixed;left:0;z-index:10;width:100%;display:block;}
 .header .knp_logo{float:left;display:block;}
-.header .navbar{float:right;background-color:#A33D29;border-radius:4px;margin:19px 0 0 0;}
+.header .navbar{float:right;background-color:#A33D29;border-radius:4px;margin:19px 0 0 0;-moz-border-radius:4px;margin:19px 0 0 0;-webkit-border-radius:4px;margin:19px 0 0 0;}
 .header .navbar ul{overflow:hidden;}
 .header .navbar li{float:left;}
 .header .navbar li a{display:block;padding:7px 20px;color:#F4EBD2;font-weight:bold;text-decoration:none;font-size:14px;}
 
 .content{overflow:hidden;position:relative;text-align:left;}
-.content .container{background-color:#302D2C;box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);text-align:left;padding:0 40px 40px 40px;}
-/*.firstContainer{padding-top:62px;}*/
+.content .container{background-color:#302D2C;box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);-moz-box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);-webkit-box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);text-align:left;padding:0 40px 40px 40px;}
 
 /* HELPERS */
 a{color:#669199;}
@@ -24,17 +23,27 @@ a{color:#669199;}
 h2{font-size:28px;font-weight:bold;color:#4f4c4b;margin:0 0 10px 0;}
 p{margin-bottom:10px;}
 pre{padding:20px;margin:0 20px 0 0;display:block;border:2px dashed #302D2C;}
-code{text-align:left;font-size:14px;display:block;}
+code{text-align:left;font-size:16px;display:block;}
 
-pre{background-color:#222222;}
+
+.gist{padding:5px;}
+.gist .gist-file{margin-bottom:0 !important;}
+.size1of2 .gist{margin-right:25px;}
+
+
 .bgRed{background-color:#B94A48;border-bottom:3px solid #F4EBD2;}
 .bgRed h2{color:#B94A48;}
+.bgBlue .gist{background-color:#B94A48;}
 .bgOrange{background-color:#FFA93C;border-bottom:3px solid #F4EBD2;}
 .bgOrange h2{color:#FFA93C;}
+.bgBlue .gist{background-color:#FFA93C;}
 .bgBlue{background-color:#3A87AD;border-bottom:3px solid #F4EBD2;}
 .bgBlue h2{color:#3A87AD;}
+.bgBlue .gist{background-color:#3A87AD;}
 .bgGreen{background-color:#73B573;border-bottom:3px solid #F4EBD2;}
 .bgGreen h2{color:#73B573;}
+.bgGreen .gist,
+.bgGreen pre{background-color:#73B573;}
 
 /* GRIDS */
 .line,.lastUnit{overflow:hidden; *overflow:visible;*zoom:1;}
@@ -55,7 +64,9 @@ pre{background-color:#222222;}
 .scrollToTop{background:url(../images/toTop.png) no-repeat 0 0;display:none;height:50px;width:50px;text-indent:-5000px;opacity:0.5;position:fixed;right:30px;bottom:3%;}
 .scrollToTop:hover{opacity:0.7;}
 
-
+@media (min-width: 940px) and (max-width: 1180px) {
+    .container{width:960px;}
+}
 @media (max-width: 480px) {
     .anchor{height:160px;}
 }
