@@ -79,5 +79,61 @@
             </div>
         </div>
 
+        <h3>Auto registration of services</h3>
+        <p>
+            All auto-detected services that implement <b>ContainerAwareInterface</b> will receive the service container automatically.<br />
+            Any auto-generated services can be overrided by simply defining a service with the same id.
+        </p>
+        <h4>Security voters</h4>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Security
+        └── BlogPostVoter.php
+{% endhighlight %}
+<br />
+        </div>
+
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/security.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The service 'app.security.blog_post_voter' will be
+automatically created.
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h4>Doctrine repositories</h4>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Entity
+        ├── BlogPost.php
+        └── BlogPostRepository.php
+{% endhighlight %}
+<br />
+        </div>
+
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/repository.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The service 'app.entity.blog_post_repository' will be
+automatically created.
+{% endhighlight %}
+            </div>
+        </div>
+
     </div>
 </div>

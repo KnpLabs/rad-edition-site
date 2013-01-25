@@ -1,0 +1,7 @@
+services:
+    security.access.blacklist_voter:
+        class: 'App\\Security\\BlogPostVoter'
+        public: false
+        arguments: [@service_container]
+        tags:
+            - { name: security.voter }

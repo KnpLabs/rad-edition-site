@@ -1,0 +1,8 @@
+services:
+    blogpost_repository:
+        class: "App\\Entity\\BlogPostRepository"
+        factory_service: doctrine
+        factory_method: getRepository
+        arguments:
+            - "App\\Entity\\BlogPost"
+
