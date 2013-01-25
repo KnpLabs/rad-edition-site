@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
-class BlogPostsController
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class BlogPostsController extends Controller
 {
     public function indexAction()
     {
