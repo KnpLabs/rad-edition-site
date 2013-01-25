@@ -1,0 +1,112 @@
+<div class="content bgGreen">
+    <div class="container">
+        <a href="" id="auto-registration" name="auto-registration" class="anchor"></a>
+        <h2>Auto registration of services</h2>
+        <p>
+            All auto-detected services that implement <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/DependencyInjection/ContainerAwareInterface.php"><b>ContainerAwareInterface</b></a> will receive the service container automatically.<br />
+            Any auto-generated services can be overrided by simply defining a service with the same id.
+        </p>
+        <h3>Security voters</h3>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Security
+        └── BlogPostVoter.php
+{% endhighlight %}
+<br />
+        </div>
+
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/security.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The service 'app.security.blog_post_voter' will be
+automatically created.
+The service container will be injected in
+'app.security.blog_post_voter'.
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h3>Doctrine repositories</h3>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Entity
+        ├── BlogPost.php
+        └── BlogPostRepository.php
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/repository.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The service 'app.entity.blog_post_repository' will be
+automatically created.
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h3>Form types</h3>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Form
+        ├── BlogPostType.php
+        └── EditBlogPostType.php
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/form.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The services 'app.form.blog_post_type' and
+'app.form.edit_blog_post_type' will be automatically created.
+The service container will be injected in
+'app.form.edit_blog_post_type'.
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h3>Twig extensions</h3>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Twig
+        └── BlogPostExtension.php
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/twig.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The services 'app.twig.blog_post_extension' will be
+automatically created.
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</div>
