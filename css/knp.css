@@ -1,7 +1,7 @@
 /* reset */
 html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
 /* fonts */
-body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+body{font:14px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 .standard pre {background-color: rgba(255, 0, 0, 0.1);}
 .rad pre {background-color: rgba(0, 255, 0, 0.1);}
@@ -27,27 +27,17 @@ a{color:#669199;}
 h2{font-size:28px;font-weight:bold;color:#4f4c4b;margin:0 0 10px 0;}
 p{margin-bottom:10px;}
 pre{padding:20px;margin:0 20px 0 0;display:block;border:2px dashed #302D2C;}
-code{text-align:left;font-size:16px;display:block;}
+code{text-align:left;font-size:14px;display:block;}
 
-
-.gist{padding:5px;}
-.gist .gist-file{margin-bottom:0 !important;}
-.size1of2 .gist{margin-right:25px;}
-
-
+pre{background-color:#222222;}
 .bgRed{background-color:#B94A48;border-bottom:3px solid #F4EBD2;}
 .bgRed h2{color:#B94A48;}
-.bgBlue .gist{background-color:#B94A48;}
 .bgOrange{background-color:#FFA93C;border-bottom:3px solid #F4EBD2;}
 .bgOrange h2{color:#FFA93C;}
-.bgBlue .gist{background-color:#FFA93C;}
 .bgBlue{background-color:#3A87AD;border-bottom:3px solid #F4EBD2;}
 .bgBlue h2{color:#3A87AD;}
-.bgBlue .gist{background-color:#3A87AD;}
 .bgGreen{background-color:#73B573;border-bottom:3px solid #F4EBD2;}
 .bgGreen h2{color:#73B573;}
-.bgGreen .gist,
-.bgGreen pre{background-color:#73B573;}
 
 /* GRIDS */
 .line,.lastUnit{overflow:hidden; *overflow:visible;*zoom:1;}

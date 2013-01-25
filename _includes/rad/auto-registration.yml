@@ -1,0 +1,18 @@
+└── App
+    ├── App.php
+    ├── Controller
+    │   └── DefaultController.php
+    ├── Entity
+    │   ├── Huitre.php
+    │   └── User.php
+    ├── Form
+    │   └── UserType.php
+    ├── JSON
+    ├── Model
+    │   └── Couteau.php
+    └── Resources
+        ├── config
+        │   ├── resource_routing.y
+        │   └── routing.yml
+        └── views
+            └── homepage.html.twig
