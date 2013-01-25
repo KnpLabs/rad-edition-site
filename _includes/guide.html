@@ -105,6 +105,8 @@ src
 {% highlight bash %}
 The service 'app.security.blog_post_voter' will be
 automatically created.
+The service container will be injected in
+'app.security.blog_post_voter'.
 {% endhighlight %}
             </div>
         </div>
@@ -120,7 +122,6 @@ src
 {% endhighlight %}
 <br />
         </div>
-
         <div class="line">
             <div class="size1of2 unit standard">
 {% highlight bash %}
@@ -130,6 +131,57 @@ src
             <div class="lastUnit rad">
 {% highlight bash %}
 The service 'app.entity.blog_post_repository' will be
+automatically created.
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h4>Form types</h4>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Form
+        ├── BlogPostType.php
+        └── EditBlogPostType.php
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/form.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The services 'app.form.blog_post_type' and
+'app.form.edit_blog_post_type' will be automatically created.
+The service container will be injected in
+'app.form.edit_blog_post_type'.
+{% endhighlight %}
+            </div>
+        </div>
+
+        <h4>Twig extensions</h4>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Twig
+        └── BlogPostExtension.php
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/twig.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The services 'app.twig.blog_post_extension' will be
 automatically created.
 {% endhighlight %}
             </div>

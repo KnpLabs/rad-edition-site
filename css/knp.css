@@ -27,7 +27,7 @@ a{color:#669199;}
 .anchor{display:block;height:70px;}
 h2{font-size:28px;font-weight:bold;color:#4f4c4b;margin:0 0 10px 0;}
 p{margin-bottom:10px;}
-pre{padding:20px;margin:0 20px 0 0;display:block;border:2px dashed #302D2C;}
+pre{padding:20px;margin:0 20px 0 0;display:block;border:2px dashed #302D2C;overflow-y:auto;}
 code{text-align:left;font-size:14px;display:block;}
 
 pre{background-color:#222222;}

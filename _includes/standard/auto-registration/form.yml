@@ -1,0 +1,11 @@
+services:
+    blogpost_type:
+        class: "App\\Form\\BlogPostType"
+        arguments: [@service_container]
+        tags:
+            - { name: form.type }
+
+    editblogpost_type:
+        class: "App\\Form\\EditBlogPostType"
+        tags:
+            - { name: form.type }

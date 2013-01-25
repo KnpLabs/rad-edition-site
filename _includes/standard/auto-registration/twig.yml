@@ -1,0 +1,6 @@
+services:
+    blogpost_extension:
+        public: false
+        class: "App\\Twig\\BlogPostExtension"
+        tags:
+            - { name: twig.extension }
