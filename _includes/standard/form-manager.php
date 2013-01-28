@@ -17,10 +17,7 @@ public function updateAction(Request $request)
     $form->bindRequest($request);
 
     if ($form->isValid()) {
-        $this->getDoctrine()
-            ->getEntityManager()
-            ->flush()
-        ;
+        $this->getDoctrine()->getManager()->flush();
         $this->getRequest()
             ->getSession()
             ->getFlashBag()
