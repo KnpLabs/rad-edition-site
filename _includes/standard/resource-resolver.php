@@ -6,7 +6,11 @@ class BlogPostsController
 {
     public function indexAction()
     {
-        $blogPosts = $this->get('orm.blogpost_repository')->findAll();
+        $blogPosts = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('App:Blogpost')
+            ->findAll()
+        ;
 
         return ['blogPosts' => $blogPosts];
     }
