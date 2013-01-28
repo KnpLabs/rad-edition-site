@@ -6,7 +6,7 @@ public function editAction()
 
     if ($form->isBound() && $form->isValid()) {
         $this->flush();
-        $this->addFlash('info');
+        $this->addFlash('success');
 
         return $this->redirectToRoute('app_blogpost_index');
     }
