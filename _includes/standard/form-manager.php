@@ -17,10 +17,19 @@ public function updateAction(Request $request)
     $form->bindRequest($request);
 
     if ($form->isValid()) {
-        $this->getDoctrine()->getEntityManager()->flush();
-        $this->getRequest()->getSession()->getFlashBag()->add('success', 'app_edit.success');
+        $this->getDoctrine()
+            ->getEntityManager()
+            ->flush()
+        ;
+        $this->getRequest()
+            ->getSession()
+            ->getFlashBag()
+            ->add('success', 'app_edit.success')
+        ;
 
-        return $this->redirect($this->generateUrl('blogpost_index'));
+        return $this->redirect(
+            $this->generateUrl('blogpost_index')
+        );
     }
 
     return $this->render('MyBundle:Default:edit.html.twig', array(
