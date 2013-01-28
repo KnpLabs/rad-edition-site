@@ -9,12 +9,37 @@ body{background-color:#1e1d1d;heitgh:100%;width:100%;color:#EAF2D9}
 .container{margin:0 auto;text-align:center;width:1170px;}
 .container:before{display:table;}
 .container:after{clear:both;display:table;}
-.header{background-color:#F4EBD2;overflow:hidden;box-shadow:0 0 15px 0 black;-moz-box-shadow:0 0 15px 0 black;-webkit-box-shadow:0 0 15px 0 black;position:fixed;left:0;z-index:10;width:100%;display:block;}
+.header{background-color:#F4EBD2;box-shadow:0 0 15px 0 black;-moz-box-shadow:0 0 15px 0 black;-webkit-box-shadow:0 0 15px 0 black;position:fixed;left:0;z-index:10;width:100%;display:block;}
 .header .knp_logo{float:left;display:block;}
-.header .navbar{float:right;background-color:#A33D29;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;margin:19px 0 0 0;}
-.header .navbar ul{overflow:hidden;}
-.header .navbar li{float:left;}
+.header .navbar{float:right;}
+.header .navbar li{float:left;position:relative;margin:19px 0 0 0;background-color:#A33D29;}
+.header .navbar li:first-child a:hover,
+.header .navbar li:first-child li:hover a,
+.header .navbar li:first-child{border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;-webkit-border-radius:4px 0 0 4px;}
+.header .navbar li:last-child a:hover,
+.header .navbar li:last-child li:hover a,
+.header .navbar li:last-child{border-radius:0 4px 4px 0;-moz-border-radius:0 4px 4px 0;-webkit-border-radius:0 4px 4px 0;}
 .header .navbar li a{display:block;padding:7px 20px;color:#F4EBD2;font-weight:bold;text-decoration:none;font-size:14px;}
+.header .navbar ul li:hover a,
+.header .navbar li a:hover{background-color:#b56454;}
+.header .navbar ul li ul{position:absolute;top:30px;left:0;background-color:#A33D29;text-align:left;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;
+    opacity: 0;
+    -webkit-transition: opacity .50s ease .1s;
+    -moz-transition: opacity .50s ease .1s;
+    -o-transition: opacity .50s ease .1s;
+    -ms-transition: opacity .50s ease .1s;
+    transition: opacity .50s ease .1s;
+}
+.header .navbar ul li:hover ul{display:block;opacity: 1;box-shadow:-2px 10px 15px -4px black;-moz-box-shadow:-2px 10px 15px -4px black-webkit-box-shadow:-2px 10px 15px -4px black;}
+.header .navbar ul li:hover ul li{background-color:transparent;}
+.header .navbar ul li:hover ul a{background-color:#A33D29;}
+.header .navbar ul li ul li{margin:0;}
+.header .navbar ul li ul li:first-child a,
+.header .navbar ul li ul li:first-child a:hover{border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;-webkit-border-radius:4px 4px 0 0;}
+.header .navbar ul li ul li:last-child a,
+.header .navbar ul li ul li:last-child a:hover{border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;-webkit-border-radius:0 0 4px 4px;}
+.header .navbar ul li ul a{width:180px;padding:7px 10px;}
+.header .navbar ul li:hover ul a:hover{background-color:#b56454;}
 
 .content{overflow:hidden;position:relative;text-align:left;}
 .content .container{background-color:#302D2C;box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);-moz-box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);-webkit-box-shadow:0 5px 5px rgba(0, 0, 0, 0.4);text-align:left;padding:0 40px 40px 40px;}
@@ -30,16 +55,26 @@ code{text-align:left;font-size:14px;display:block;}
 .rad pre {background-color: rgba(0, 255, 0, 0.1);}
 .standard{background:url(../images/standard.png) no-repeat 482px 13px;}
 .standard pre {background-color: rgba(255, 0, 0, 0.1);}
+.wiki{background:url(../images/wiki.png) no-repeat left center;display:block;height:23px;padding:6px 0 0 47px;margin-left:-40px;text-decoration:none;}
+.wiki:hover{text-decoration:underline;}
 
 pre{background-color:#222222;}
 .bgRed{background-color:#B94A48;border-bottom:3px solid #F4EBD2;}
-.bgRed h2{color:#B94A48;}
+.bgRed h2,
+.bgRed a{color:#B94A48;}
+.bgRed .wiki{background-position:left 2px;}
 .bgOrange{background-color:#FFA93C;border-bottom:3px solid #F4EBD2;}
-.bgOrange h2{color:#FFA93C;}
-.bgBlue{background-color:#529ab2;border-bottom:3px solid #F4EBD2;}
-.bgBlue h2{color:#529ab2;}
-.bgGreen{background-color:#669526;border-bottom:3px solid #F4EBD2;}
-.bgGreen h2{color:#669526;}
+.bgOrange h2,
+.bgOrange a{color:#FFA93C;}
+.bgOrange .wiki{background-position:left -78px;}
+.bgBlue{background-color:#057C8A;border-bottom:3px solid #F4EBD2;}
+.bgBlue h2,
+.bgBlue a{color:#057C8A;}
+.bgBlue .wiki{background-position:left -23px;}
+.bgGreen{background-color:#61A278;border-bottom:3px solid #F4EBD2;}
+.bgGreen h2,
+.bgGreen a{color:#61A278;}
+.bgGreen .wiki{background-position:left -51px;}
 
 /* GRIDS */
 .line,.lastUnit{overflow:hidden; *overflow:visible;*zoom:1;}
@@ -60,8 +95,21 @@ pre{background-color:#222222;}
 .scrollToTop{background:url(../images/toTop.png) no-repeat 0 0;display:none;height:50px;width:50px;text-indent:-5000px;opacity:0.5;position:fixed;right:30px;bottom:3%;}
 .scrollToTop:hover{opacity:0.7;}
 
+
+@media (max-width: 1420px) {
+    .header .knp_logo{margin-left:100px;}
+}
+@media (max-width: 1100px) {
+    .unit{float:none;}
+    .size1of2{width:100%;}
+    .rad{background-position: 100% 13px;}
+    .standard{background-position: 102% 13px;}
+}
 @media (min-width: 940px) and (max-width: 1180px) {
     .container{width:960px;}
+}
+@media (max-width: 750px) {
+    .header .knp_logo{float:right;}
 }
 @media (max-width: 480px) {
     .anchor{height:160px;}
