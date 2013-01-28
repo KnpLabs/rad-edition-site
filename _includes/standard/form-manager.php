@@ -17,7 +17,8 @@ public function updateAction(Request $request)
     $form->bindRequest($request);
 
     if ($form->isValid()) {
-        // do some stuffs with $blogPost
+        $this->getDoctrine()->getEntityManager()->flush();
+        $this->getRequest()->getSession()->getFlashBag()->add('success', 'app_edit.success');
 
         return $this->redirect($this->generateUrl('blogpost_index'));
     }
