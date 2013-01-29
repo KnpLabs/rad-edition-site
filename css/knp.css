@@ -76,6 +76,8 @@ pre{background-color:#222222;}
 .bgGreen a{color:#61A278;}
 .bgGreen .wiki{background-position:left -51px;}
 
+.footer {font-size: 12px;}
+
 /* GRIDS */
 .line,.lastUnit{overflow:hidden; *overflow:visible;*zoom:1;}
 .unit{float:left;}
