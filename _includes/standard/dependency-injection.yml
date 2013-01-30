@@ -1,6 +1,6 @@
 # Resources/config/services.yml
 parameters:
-   my_bundle_blogpost_manager.class: 'Mybundle\\Manager\\BlogPostManager'
+   my_bundle_blogpost_manager.class: 'Mybundle\Manager\BlogPostManager'
 
 services:
     my_bundle_blogpost_manager:
@@ -8,4 +8,4 @@ services:
 
 # Resources/config/services_test.yml
 parameters:
-   my_bundle_blogpost_manager.class: 'Mybundle\\Manager\\FakeBlogPostManager'
+   my_bundle_blogpost_manager.class: 'Mybundle\Manager\FakeBlogPostManager'
