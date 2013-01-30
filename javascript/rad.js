@@ -19,6 +19,19 @@ $(document).ready(function() {
         cache: true
     });
 
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.github.com/repos/KnpLabs/KnpRadBundle/contributors',
+        success: function(data) {
+            console.log(data);
+            var contributors = [];
+            data.forEach(function(contributor) {
+                contributors.push('<a href="https://github.com/' + contributor.login + '"><img src="' + contributor.avatar_url + '" title="' + contributor.login + '" /></a>');
+            });
+            $('#contributors').html(contributors);
+        }
+    });
+
     function replaceURLWithHTMLLinks(text) {
         var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
