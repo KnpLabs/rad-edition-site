@@ -1,15 +1,1 @@
-App:BlogPosts:
-
-    resources:
-        - show
-        - edit
-        - delete
-
-    collections:
-        - index:
-            defaults:
-                _resources:
-                    blogPosts:
-                        service: 'orm.blogpost_repository'
-                        method: 'findAll'
-        - new
+App:BlogPosts: ~
