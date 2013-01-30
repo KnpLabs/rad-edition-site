@@ -3,7 +3,7 @@ $(document).ready(function() {
         type: 'GET',
         url: 'http://search.twitter.com/search.json',
         data: {
-            q: 'KnpRadBundle',
+            q: 'KnpRadBundle-filter:retweets',
             result_type: 'recent',
             rpp: 5
         },
