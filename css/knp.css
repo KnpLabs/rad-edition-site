@@ -55,7 +55,7 @@ code{text-align:left;font-size:14px;display:block;}
 .rad pre {background-color: rgba(0, 255, 0, 0.1);}
 .standard{background:url(../images/standard.png) no-repeat 482px 13px;}
 .standard pre {background-color: rgba(255, 0, 0, 0.1);}
-.wiki{background:url(../images/wiki.png) no-repeat left center;display:block;height:23px;padding:6px 0 0 47px;margin-left:-40px;text-decoration:none;}
+.wiki{background:url(../images/wiki.png) no-repeat left center;display:block;height:23px;padding:6px 0 0 53px;margin-left:-45px;text-decoration:none;}
 .wiki:hover{text-decoration:underline;}
 
 pre{background-color:#222222;}
