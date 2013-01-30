@@ -26,24 +26,24 @@
                                 <li><a class="anchorLink" href="#dependency-injection">Dependency injection</a></li>
                                 <li><a class="anchorLink" href="#auto-registration">Auto registration</a></li>
                                 <li><a class="anchorLink" href="#missing-template">Missing template</a></li>
+                                <li><a class="anchorLink" href="#flash">Flash message</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        {% include introduction.html %}
-        {% include installation.html %}
-
-        {% include template-resolution.html %}
-        {% include form-manager.html %}
-        {% include routing.html %}
-        {% include resource-resolver.html %}
-        {% include dependency-injection.html %}
-        {% include auto-registration.html %}
-        {% include missing-template.html %}
-
-        {% include credits.html %}
+        {% assign color = 'red' %}    {% include introduction.html %}
+        {% assign color = 'orange' %} {% include installation.html %}
+        {% assign color = 'blue' %}   {% include template-resolution.html %}
+        {% assign color = 'green' %}  {% include form-manager.html %}
+        {% assign color = 'red' %}    {% include routing.html %}
+        {% assign color = 'orange' %} {% include resource-resolver.html %}
+        {% assign color = 'blue' %}   {% include dependency-injection.html %}
+        {% assign color = 'green' %}  {% include auto-registration.html %}
+        {% assign color = 'red' %}    {% include missing-template.html %}
+        {% assign color = 'orange' %} {% include flash-message.html %}
+        {% assign color = 'blue' %}   {% include credits.html %}
     </div>
     <a href="http://github.com/KnpLabs/KnpRadBundle"><img style="position: fixed; top: 0; left: 0; border: 0; z-index: 12" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
     <a class="scrollToTop anchorLink" href="#toTop">To Top</a>

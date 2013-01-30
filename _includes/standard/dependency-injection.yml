@@ -1,11 +1,11 @@
-# services.yml
+# Resources/config/services.yml
 parameters:
-   my_bundle_blogpost_manager.class: 'Mybundle\\Manager\\BlogPostManager'
+   my_bundle_blogpost_manager.class: 'Mybundle\Manager\BlogPostManager'
 
 services:
     my_bundle_blogpost_manager:
         class: '%my_bundle_blogpost_manager.class%'
 
-# services_test.yml
+# Resources/config/services_test.yml
 parameters:
-   my_bundle_blogpost_manager.class: 'Mybundle\\Manager\\FakeBlogPostManager'
+   my_bundle_blogpost_manager.class: 'Mybundle\Manager\FakeBlogPostManager'

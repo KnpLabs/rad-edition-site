@@ -1,14 +1,15 @@
 <?php
 
-public function editAction()
+public function newAction()
 {
-    $form = $this->createBoundObjectForm(new BlogPost, 'edit');
+    $post = new BlogPost;
+    $form = $this->createBoundObjectForm($post, 'new');
 
     if ($form->isBound() && $form->isValid()) {
-        $this->flush();
+        $this->persist($post, true);
         $this->addFlash('success');
 
-        return $this->redirectToRoute('app_blogpost_index');
+        return $this->redirectToRoute('app_blogposts_index');
     }
 
     return ['form' => $form->createView()];
