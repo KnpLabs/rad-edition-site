@@ -3,7 +3,7 @@
 public function newAction()
 {
     $blogPost = new BlogPost();
-    $form = $this->createForm(new EditBlogPostType(), $blogPost);
+    $form = $this->createForm(new NewBlogPostType(), $blogPost);
 
     return $this->render('App:BlogPosts:new.html.twig', array(
         'form' => $form->createView(),
@@ -13,7 +13,7 @@ public function newAction()
 public function createAction(Request $request)
 {
     $blogPost = new BlogPost();
-    $form = $this->createForm(new EditBlogPostType(), $blogPost);
+    $form = $this->createForm(new NewBlogPostType(), $blogPost);
     $form->bindRequest($request);
 
     if ($form->isValid()) {
