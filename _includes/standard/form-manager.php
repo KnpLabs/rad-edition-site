@@ -2,13 +2,12 @@
 
 public function newAction(Request $request)
 {
-    $blogPost = new BlogPost();
-    $form = $this->createForm(new NewBlogPostType(), $blogPost);
+    $post = new BlogPost();
+    $form = $this->createForm(new NewBlogPostType(), $post);
 
     if (!$request->isMethodSafe()
-        && $form->bindRequest($request)->isValid()
-       ) {
-        $this->getDoctrine()->getManager()->persist($blogPost);
+     && $form->bindRequest($request)->isValid()) {
+        $this->getDoctrine()->getManager()->persist($post);
         $this->getDoctrine()->getManager()->flush();
         $request->getSession()
             ->getFlashBag()
