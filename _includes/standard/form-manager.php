@@ -1,25 +1,14 @@
 <?php
 
-public function newAction()
+public function newAction(Request $request)
 {
     $blogPost = new BlogPost();
     $form = $this->createForm(new NewBlogPostType(), $blogPost);
 
-    return $this->render('App:BlogPosts:new.html.twig', array(
-        'form' => $form->createView(),
-    );
-}
-
-public function createAction(Request $request)
-{
-    $blogPost = new BlogPost();
-    $form = $this->createForm(new NewBlogPostType(), $blogPost);
-    $form->bindRequest($request);
-
-    if ($form->isValid()) {
+    if (!$request->isMethodSafe() && $form->bindRequest($request)->isValid()) {
+        $this->getDoctrine()->getManager()->persist($blogPost);
         $this->getDoctrine()->getManager()->flush();
-        $this->getRequest()
-            ->getSession()
+        $request->getSession()
             ->getFlashBag()
             ->add('success', 'app_blogposts_new.success')
         ;
