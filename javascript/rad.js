@@ -5,7 +5,7 @@ $(document).ready(function() {
         data: {
             q: 'KnpRadBundle',
             result_type: 'recent',
-            count: 5
+            rpp: 5
         },
         success: function(data) {
             var tweets = [];
