@@ -1,0 +1,18 @@
+<div class="content bg{{ color | capitalize }}">
+    <div class="container">
+        <a href="" id="flash" name="flash" class="anchor"></a>
+        <h2>Flash message</h2>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight php %}
+{% include standard/flash-message.php %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight php %}
+{% include rad/flash-message.php %}
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</div>

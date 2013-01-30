@@ -26,6 +26,7 @@
                                 <li><a class="anchorLink" href="#dependency-injection">Dependency injection</a></li>
                                 <li><a class="anchorLink" href="#auto-registration">Auto registration</a></li>
                                 <li><a class="anchorLink" href="#missing-template">Missing template</a></li>
+                                <li><a class="anchorLink" href="#flash">Flash message</a></li>
                             </ul>
                         </li>
                         <li><a class="anchorLink" href="#credits">Credits</a></li>
@@ -42,7 +43,8 @@
         {% assign color = 'blue' %}   {% include dependency-injection.html %}
         {% assign color = 'green' %}  {% include auto-registration.html %}
         {% assign color = 'red' %}    {% include missing-template.html %}
-        {% assign color = 'orange' %} {% include credits.html %}
+        {% assign color = 'orange' %} {% include flash-message.html %}
+        {% assign color = 'blue' %}   {% include credits.html %}
     </div>
     <a href="http://github.com/KnpLabs/KnpRadBundle"><img style="position: fixed; top: 0; left: 0; border: 0; z-index: 12" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
     <a class="scrollToTop anchorLink" href="#toTop">To Top</a>
