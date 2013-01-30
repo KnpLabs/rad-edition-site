@@ -23,13 +23,14 @@ $(document).ready(function() {
         type: 'GET',
         url: 'https://api.github.com/repos/KnpLabs/KnpRadBundle/contributors',
         success: function(data) {
-            console.log(data);
             var contributors = [];
-            data.forEach(function(contributor) {
+            data.data.forEach(function(contributor) {
                 contributors.push('<a href="https://github.com/' + contributor.login + '"><img src="' + contributor.avatar_url + '" title="' + contributor.login + '" /></a>');
             });
             $('#contributors').html(contributors);
-        }
+        },
+        dataType: 'jsonp',
+        cache: true
     });
 
     function replaceURLWithHTMLLinks(text) {
