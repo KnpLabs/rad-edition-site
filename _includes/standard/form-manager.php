@@ -1,16 +1,16 @@
 <?php
 
-public function editAction()
+public function newAction()
 {
     $blogPost = new BlogPost();
     $form = $this->createForm(new EditBlogPostType(), $blogPost);
 
-    return $this->render('MyBundle:Default:edit.html.twig', array(
+    return $this->render('App:BlogPosts:new.html.twig', array(
         'form' => $form->createView(),
     );
 }
 
-public function updateAction(Request $request)
+public function createAction(Request $request)
 {
     $blogPost = new BlogPost();
     $form = $this->createForm(new EditBlogPostType(), $blogPost);
@@ -21,15 +21,15 @@ public function updateAction(Request $request)
         $this->getRequest()
             ->getSession()
             ->getFlashBag()
-            ->add('success', 'app_edit.success')
+            ->add('success', 'app_blogposts_new.success')
         ;
 
         return $this->redirect(
-            $this->generateUrl('blogpost_index')
+            $this->generateUrl('app_blogposts_index')
         );
     }
 
-    return $this->render('MyBundle:Default:edit.html.twig', array(
+    return $this->render('App:BlogPosts:new.html.twig', array(
         'form' => $form->createView(),
     );
 }
