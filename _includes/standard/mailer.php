@@ -19,7 +19,7 @@ public function sendAction()
             ),
             'text/html'
         )
-        ->attach(Swift_Attachment::fromPath('your-information.pdf'))
+        ->attach(\Swift_Attachment::fromPath('your-information.pdf'))
     ;
 
     $this->get('mailer')->send($message);

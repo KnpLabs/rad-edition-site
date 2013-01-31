@@ -7,7 +7,7 @@ public function sendAction()
         ['name' => $name],
         'send@example.com',
         'recipient@example.com'
-    )->attach(Swift_Attachment::fromPath('your-information.pdf'));
+    )->attach(\Swift_Attachment::fromPath('your-information.pdf'));
 
     $this->send($message);
 }
