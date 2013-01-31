@@ -129,7 +129,11 @@ li img {
     height: 38px;
     margin: 0 10px;
     float: left;
+}
 
+time {
+    color: #aaaaaa;
+    font-size: 0.9em;
 }
 
 @media (max-width: 1420px) {

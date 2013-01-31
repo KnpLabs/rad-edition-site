@@ -15,6 +15,7 @@ $(document).ready(function() {
                 tweets.push(
                     '<img src="' + tweet.profile_image_url + '" title="' + tweet.from_user_name + '" />'
                     + '<b>' + tweet.from_user_name + '</b> ' + tweet.text.replace(urlExp,"<a href='$1'>$1</a>")
+                    + '<br /><time datetime="' + tweet.created_at + '">' + $.timeago(tweet.created_at) + '</time>'
                 );
             });
             tweets = '<ul><li>' + tweets.join('</li><li>') + '</li></ul>';
