@@ -9,11 +9,16 @@ $(document).ready(function() {
         },
         success: function(data) {
             var tweets = [];
+            var urlExp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+
             data.results.forEach(function(tweet) {
-                tweets.push('<b>' + tweet.from_user_name + '</b> ' + tweet.text);
+                tweets.push(
+                    '<img src="' + tweet.profile_image_url + '" title="' + tweet.from_user_name + '" />'
+                    + '<b>' + tweet.from_user_name + '</b> ' + tweet.text.replace(urlExp,"<a href='$1'>$1</a>")
+                );
             });
             tweets = '<ul><li>' + tweets.join('</li><li>') + '</li></ul>';
-            $('#tweets').html(replaceURLWithHTMLLinks(tweets));
+            $('#tweets').html(tweets);
         },
         dataType: 'jsonp',
         cache: true
@@ -25,17 +30,15 @@ $(document).ready(function() {
         success: function(data) {
             var contributors = [];
             data.data.forEach(function(contributor) {
-                contributors.push('<a href="https://github.com/' + contributor.login + '"><img src="' + contributor.avatar_url + '" title="' + contributor.login + '" /></a>');
+                contributors.push(
+                    '<a href="https://github.com/' + contributor.login + '">'
+                    + '<img src="' + contributor.avatar_url + '" title="' + contributor.login + '" /></a>'
+                );
             });
+            contributors = '<ul><li>' + contributors.join('</li><li>') + '</li></ul>';
             $('#contributors').html(contributors);
         },
         dataType: 'jsonp',
         cache: true
     });
-
-    function replaceURLWithHTMLLinks(text) {
-        var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-
-        return text.replace(exp,"<a href='$1'>$1</a>");
-    }
 });
