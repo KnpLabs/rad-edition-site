@@ -8,18 +8,23 @@ $(document).ready(function() {
             rpp: 5
         },
         success: function(data) {
-            var tweets = [];
-            var urlExp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+            var tweets    = [];
+            var tweetsElt = $('#tweets');
+            var urlExp    = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%? = ~_|!:,.;]*[-A-Z0-9+&@#\/% = ~_|])/ig;
 
-            data.results.forEach(function(tweet) {
-                tweets.push(
-                    '<img src="' + tweet.profile_image_url + '" title="' + tweet.from_user_name + '" />'
-                    + '<b>' + tweet.from_user_name + '</b> ' + tweet.text.replace(urlExp,"<a href='$1'>$1</a>")
-                    + '<br /><time datetime="' + tweet.created_at + '">' + $.timeago(tweet.created_at) + '</time>'
-                );
-            });
-            tweets = '<ul><li>' + tweets.join('</li><li>') + '</li></ul>';
-            $('#tweets').html(tweets);
+            if (data.error) {
+                tweetsElt.html(data.error);
+            } else {
+                data.results.forEach(function(tweet) {
+                    tweets.push(
+                        '<img src="' + tweet.profile_image_url + '" title="' + tweet.from_user_name + '" />'
+                        + '<b>' + tweet.from_user_name + '</b> ' + tweet.text.replace(urlExp,"<a href='$1'>$1</a>")
+                        + '<br /><time datetime="' + tweet.created_at + '">' + $.timeago(tweet.created_at) + '</time>'
+                    );
+                });
+                tweets = '<ul><li>' + tweets.join('</li><li>') + '</li></ul>';
+                tweetsElt.html(tweets);
+            }
         },
         dataType: 'jsonp',
         cache: true
