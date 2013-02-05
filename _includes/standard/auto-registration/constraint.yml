@@ -1,0 +1,5 @@
+services:
+    app.constraints.validator.is_scalar_validator:
+        class: "App\\Validator\\Constraints\\IsScalarValidator"
+        tags:
+            - { name: validator.constraint_validator, alias: "is_scalar" }
