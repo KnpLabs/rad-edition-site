@@ -4,15 +4,17 @@
         <h2>Auto registration of services</h2>
         <p>
             All auto-detected services that implement <a href="https://github.com/symfony/symfony/blob/master/src/Symfony/Component/DependencyInjection/ContainerAwareInterface.php"><b>ContainerAwareInterface</b></a> will receive the service container automatically.<br />
-            Any auto-generated services can be overrided by simply defining a service with the same id.
+            Any auto-generated services can be overrided by simply defining a service with the same id.<br />
+            Classes that doesn't extend/implement correct class/interface won't be auto-registered.<br />
         </p>
+
         <h3>Security voters</h3>
         <div class="line">
 {% highlight bash %}
 src
 └── App
     └── Security
-        └── BlogPostVoter.php
+        └── BlogPostVoter.php # implements Symfony\Component\Security\Core\Authorization\Voter\VoterInterface
 {% endhighlight %}
 <br />
         </div>
@@ -91,7 +93,7 @@ The service container will be injected in
 src
 └── App
     └── Twig
-        └── BlogPostExtension.php
+        └── BlogPostExtension.php # implements Twig_ExtensionInterface
 {% endhighlight %}
 <br />
         </div>
@@ -116,7 +118,7 @@ src
 └── App
     └── Validator
         └── Constraints
-            └── IsScalar.php
+            └── IsScalar.php # extends Symfony\Component\Validator\Constraint
             └── IsScalarValidator.php
 {% endhighlight %}
 <br />
