@@ -108,5 +108,31 @@ automatically created.
 {% endhighlight %}
             </div>
         </div>
+
+        <h3>Constraint validators</h3>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Validator
+        └── Constraints
+            └── IsScalar.php
+            └── IsScalarValidator.php
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/constraint.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The service 'app.constraints.validator.is_scalar_validator'
+will be automatically created.
+{% endhighlight %}
+            </div>
+        </div>
     </div>
 </div>
