@@ -1,6 +1,7 @@
 <?php
 
 $post = $this->getDoctrine()
+    ->getManager()
     ->getRepository('App:BlogPost')
     ->find($id)
 ;
