@@ -10,7 +10,7 @@ $(document).ready(function() {
         success: function(data) {
             var tweets    = [];
             var tweetsElt = $('#tweets');
-            var urlExp    = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%? = ~_|!:,.;]*[-A-Z0-9+&@#\/% = ~_|])/ig;
+            var urlExp    = /(https?:\/\/t\.co\/(?:\w+))/ig;
 
             if (data.error) {
                 tweetsElt.html(data.error);
