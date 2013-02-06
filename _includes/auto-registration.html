@@ -88,6 +88,31 @@ The service container will be injected in
             </div>
         </div>
 
+        <h3>Form type extensions</h3>
+        <div class="line">
+{% highlight bash %}
+src
+└── App
+    └── Form
+        └── Extension
+            └── ImageTypeExtension.php # extends Symfony\Component\Form\AbstractTypeExtension
+{% endhighlight %}
+<br />
+        </div>
+        <div class="line js-scroll">
+            <div class="size1of2 unit standard">
+{% highlight bash %}
+{% include standard/auto-registration/form-extension.yml %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight bash %}
+The services 'app.form.extension.image_type_extension'
+will be automatically created.
+{% endhighlight %}
+            </div>
+        </div>
+
         <h3>Twig extensions</h3>
         <div class="line">
 {% highlight bash %}

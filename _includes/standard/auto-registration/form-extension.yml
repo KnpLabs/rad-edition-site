@@ -1,0 +1,5 @@
+services:
+    image_type_extension:
+        class: "App\\Form\\Extension\\ImageTypeExtension"
+        tags:
+            - { name: form.type_extension, alias: file }
