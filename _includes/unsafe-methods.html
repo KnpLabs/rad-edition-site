@@ -1,0 +1,32 @@
+<div class="content bg{{ color | capitalize }}">
+    <div class="container">
+        <a href="unsafe-methods" id="unsafe-methods" name="unsafe-methods" class="anchor"></a>
+        <h2>Unsafe methods handling through link</h2>
+        <p><a class="wiki" href="https://github.com/KnpLabs/KnpRadBundle/wiki/csrf-protected-links">Wiki</a></p>
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight css+jinja %}
+{% include standard/unsafe-methods.html.twig %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight css+jinja %}
+{% include rad/unsafe-methods.html.twig %}
+{% endhighlight %}
+            </div>
+        </div>
+        <br />
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight php %}
+{% include standard/unsafe-methods.php %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight php %}
+{% include rad/unsafe-methods.php %}
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</div>

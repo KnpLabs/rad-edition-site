@@ -1,0 +1,15 @@
+{% raw %}
+<!-- ... -->
+
+<form
+    action="{{ path('app_blogposts_delete', {'id': 1}) }}"
+    onsubmit="return confirm('Are you sure?')"
+    method="POST"
+>
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="hidden" name="_token" value="{{ csrf_token('link') }}" />
+    <input type="submit" value="Delete"/>
+</form>
+
+<!-- ... -->
+{% endraw %}
