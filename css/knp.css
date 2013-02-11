@@ -176,6 +176,7 @@ time {
     .header .knp_logo{float:right;}
 }
 @media (max-width: 480px) {
-    .anchor{height:160px;}
+    .anchor{height:140px;}
     .forkGithub{display:none;}
+    .broughToYou{padding-bottom:20px;}
 }
