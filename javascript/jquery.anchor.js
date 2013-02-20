@@ -15,6 +15,32 @@
 $(document).ready(function() {
     $("a.anchorLink").anchorAnimate();
     $("a.scrollToTop").toTop();
+
+    setTimeout(function(){
+        $('.sideMenu').addClass('visible');
+    },1000);
+
+    $("#buttonTweet").tweet();
+
+
+    $(window).scroll(function() {
+        if($(window).scrollTop() != 0){
+            for(var i = 0; i < $('.anchor').length; i++){
+                var eTop = $($('.anchor')[i]).offset().top;
+                var a = eTop - $(window).scrollTop();
+                if(a < 1){
+                    var newAnchor = $('.anchor')[i];
+                }
+            }
+            var el = $(newAnchor).attr('id');
+            var elem = $('.' + el);
+
+            if($('.active').length > 1){
+                $('.sideMenu li a').removeClass('active');
+            }
+            elem.addClass('active');
+        }
+    });
 });
 
 jQuery.fn.anchorAnimate = function(settings) {
@@ -26,6 +52,8 @@ jQuery.fn.anchorAnimate = function(settings) {
     return this.each(function(){
         var caller = this
         $(caller).click(function (event) {
+            $("a.active").removeClass('active');
+            $(caller).addClass('active');
             event.preventDefault()
             var locationHref = window.location.href
             var elementClick = $(caller).attr("href")
@@ -46,5 +74,13 @@ jQuery.fn.toTop = function() {
         }else{
             $('.scrollToTop').hide('slow');
         }
+    });
+};
+
+jQuery.fn.tweet = function() {
+    $("#buttonTweet").click(function() {
+        var dataMsg = $("#buttonTweet").attr('data-message');
+        var tweetLink = 'http://twitter.com/intent/tweet?text=' + dataMsg;
+         window.open(tweetLink, 'twitter', 'width=500, height=300');
     });
 };
