@@ -1,0 +1,79 @@
+<div class="content bg{{ color | capitalize }}">
+    <div class="container">
+        <a href="" id="is-owner-voter" name="is-owner-voter" class="anchor"></a>
+        <h2>IS_OWNER Voter</h2>
+        <div class="line">
+
+            <p>
+                Permits to use the decision manager system to check if an object implementing `OwnableInterface`
+                is owned by an object implementing `OwnerInterface`.  <br />
+                <br />
+                If object implementing `OwnerInterface` also implements `EquatableInterface` and `UserInterface`,
+                it will be used to check equality of owner.
+                <br />
+                <br />
+                Otherwise, it will use object identity (===).
+                <br />
+                <br />
+            </p>
+
+            <p>
+                Imagine you have a `Post` class that is editable only by its owner:<br />
+            </p>
+            <br />
+
+{% highlight php %}
+<?php
+
+use Knp\RadBundle\Security\OwnableInterface;
+
+class Post implements OwnableInterface
+{
+    /**
+     * @ORM\ManyToOne(targetEntity="User")
+     **/
+    public $createdBy;
+
+    public function getOwner()
+    {
+        return $this->createdBy;
+    }
+}
+{% endhighlight %}
+
+<br />
+            <p>
+                And you have a `User` class that represents users in your system:<br />
+            </p>
+            <br />
+
+{% highlight php %}
+<?php
+
+use Knp\RadBundle\Security\OwnerInterface;
+
+class User implements OwnerInterface, UserInterface, EquatableInterface
+{
+}
+{% endhighlight %}
+
+            <br />
+            <p>
+                When you want to know if an object is owned bu the current user, juste use:<br />
+            </p>
+            <br />
+
+{% highlight php %}
+<?php
+
+$securityContext->isGranted('IS_OWNER', new Post); // true if Post::createdBy is current logged-in user
+{% endhighlight %}
+<br />
+<br />
+
+Combined with <a href="#resource-resolver">Resource Resolvers</a>, you can be sure that
+an object is editable by the logged-in user even before any controller is reached.
+
+        </div>
+    </div>
+</div>
