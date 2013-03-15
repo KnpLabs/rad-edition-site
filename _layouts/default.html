@@ -53,6 +53,7 @@
                                 <li><a class="anchorLink" href="#missing-template">Missing template</a></li>
                                 <li><a class="anchorLink" href="#flash">Flash message</a></li>
                                 <li><a class="anchorLink" href="#mailer">Mailer</a></li>
+                                <li><a class="anchorLink" href="#is-owner-voter">Security Voters</a></li>
                                 <li><a class="anchorLink" href="#unsafe-methods">Unsafe methods handling through link</a></li>
                                 <li><a class="anchorLink" href="#shortcuts">Shortcuts</a></li>
                             </ul>
@@ -72,9 +73,10 @@
         {% assign color = 'red' %}    {% include missing-template.html %}
         {% assign color = 'orange' %} {% include flash-message.html %}
         {% assign color = 'blue' %}   {% include mailer.html %}
-        {% assign color = 'green' %}  {% include unsafe-methods.html %}
-        {% assign color = 'red' %}    {% include shortcuts.html %}
-        {% assign color = 'orange' %} {% include credits.html %}
+        {% assign color = 'green' %}  {% include is-owner-voter.html %}
+        {% assign color = 'red' %}    {% include unsafe-methods.html %}
+        {% assign color = 'orange' %} {% include shortcuts.html %}
+        {% assign color = 'blue' %}   {% include credits.html %}
         <div class="sideMenu">
             <ul>
                 <li><a class="anchorLink bgRed intro" href="#intro"><span></span></a></li>
@@ -88,8 +90,9 @@
                 <li><a class="anchorLink bgRed missing-template" href="#missing-template"><span></span></a></li>
                 <li><a class="anchorLink bgOrange flash" href="#flash"><span></span></a></li>
                 <li><a class="anchorLink bgBlue mailer" href="#mailer"><span></span></a></li>
-                <li><a class="anchorLink bgGreen unsafe-methods" href="#unsafe-methods"><span></span></a></li>
-                <li><a class="anchorLink bgRed shortcuts" href="#shortcuts"><span></span></a></li>
+                <li><a class="anchorLink bgGreen is-owner-voter" href="#is-owner-voter"><span></span></a></li>
+                <li><a class="anchorLink bgRed unsafe-methods" href="#unsafe-methods"><span></span></a></li>
+                <li><a class="anchorLink bgBlue shortcuts" href="#shortcuts"><span></span></a></li>
             </ul>
 
             <div class="twitter">
