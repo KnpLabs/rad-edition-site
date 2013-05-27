@@ -2,4 +2,4 @@ homepage:
     pattern: /
     defaults: { _controller: FrameworkBundle:Template:template, template: 'App::homepage.html.twig' }
 
-App:BlogPosts: ~
+'App:BlogPosts': ~
