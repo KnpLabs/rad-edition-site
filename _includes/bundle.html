@@ -1,0 +1,28 @@
+<div class="content bg{{ color | capitalize }}">
+    <div class="container">
+        <a href="" id="bundle" name="bundle" class="anchor"></a>
+        <h2>Bundle and configuration</h2>
+        <div class="line">
+{% highlight yaml %}
+{% include standard/config.yml %}
+{% endhighlight %}
+        </div>
+        <br />
+        <div class="line">
+            <div class="size1of2 unit standard">
+{% highlight php %}
+{% include standard/bundle/extension.php %}
+{% endhighlight %}
+<br />
+{% highlight php %}
+{% include standard/bundle/configuration.php %}
+{% endhighlight %}
+            </div>
+            <div class="lastUnit rad">
+{% highlight php %}
+{% include rad/bundle.php %}
+{% endhighlight %}
+            </div>
+        </div>
+    </div>
+</div>
