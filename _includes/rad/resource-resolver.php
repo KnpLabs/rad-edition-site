@@ -8,4 +8,9 @@ class BlogPostsController
     {
         return ['blogPosts' => $blogPosts];
     }
+
+    public function showAction(BlogPost $blogPost)
+    {
+        return ['blogPost' => $blogPost];
+    }
 }
