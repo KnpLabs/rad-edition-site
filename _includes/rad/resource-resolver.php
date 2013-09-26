@@ -9,7 +9,7 @@ class BlogPostsController
         return ['blogPosts' => $blogPosts];
     }
 
-    public function showAction(BlogPost $blogPost)
+    public function showAction(BlogPost $blogPost, Session $session)
     {
         return ['blogPost' => $blogPost];
     }
