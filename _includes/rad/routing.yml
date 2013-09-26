@@ -2,4 +2,9 @@ homepage:
     pattern: /
     defaults: { _controller: FrameworkBundle:Template:template, template: 'App::homepage.html.twig' }
 
-'App:BlogPosts': ~
+'App:BlogPosts':
+    defaults:
+        _resources:
+            "blogPosts": {service: "app.entity.blog_post_repository", method: "findAll"}
+            "blogPost":  {service: "app.entity.blog_post_repository", method: "find", arguments: [name: "id"]}
+            "session":   {service: "service_container",               method: "get",  arguments: [value: "session"]}
