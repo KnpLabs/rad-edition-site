@@ -21,6 +21,6 @@ class App extends Bundle
     public function buildContainer(array $config, ContainerBuilder $container)
     {
         // here $config is the parsed configuration
-        $container->addParameter('app.foo', $config['foo']);
+        $container->setParameter('app.foo', $config['foo']);
     }
 }
