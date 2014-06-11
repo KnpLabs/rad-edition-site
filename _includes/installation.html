@@ -1,12 +1,36 @@
 <div class="content bg{{ color | capitalize }}">
     <div class="container">
         <a href="" id="installation" name="installation" class="anchor"></a>
-        <h2>Installation</h2>
+        <h2>Installation of RAD edition</h2>
         <p>We recommend to use <a href="http://www.getcomposer.org">Composer</a> in order to create a new project.</p>
         <p>Once installed, run the following commands to create a new project:</p>
 {% highlight bash %}
 $ composer.phar create-project -s dev --prefer-dist --dev knplabs/rad-edition my_project
 $ cd my_project
 {% endhighlight %}
+    </div>
+    <div class="container">
+        <a href="" id="bundle-installation" name="bundle-installation" class="anchor"></a>
+        <h2>Installation of RAD bundle</h2>
+        <p>If you want to use <a href="https://github.com/KnpLabs/KnpRadBundle">the bundle</a> in the existing project, you can do the following:</p>
+
+{% highlight bash %}
+$ composer.phar require knplabs/rad-bundle@~2.3.2
+{% endhighlight %}
+
+{% highlight php %}
+{% include bundle-installation/app-kernel.php %}
+{% endhighlight %}
+
+{% highlight yaml %}
+{% include bundle-installation/routing-dev.yml %}
+{% endhighlight %}
+
+{% highlight yaml %}
+{% include bundle-installation/routing.yml %}
+{% endhighlight %}
+        <br />
+        <br />
+        <p>About Routing you can read more <a href="#routing">here</a> and in <a href="https://github.com/KnpLabs/KnpRadBundle/wiki/Routing">Wiki</a></p>
     </div>
 </div>

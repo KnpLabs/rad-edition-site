@@ -1,0 +1,5 @@
+#app/config/routing.yml
+acme_demo:
+    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+    type:     rad_convention
+    prefix:   /
