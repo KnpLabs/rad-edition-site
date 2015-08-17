@@ -4,8 +4,9 @@ public function newAction(Request $request)
 {
     $post = new BlogPost();
     $form = $this->createForm(new NewBlogPostType(), $post);
-
-    if (!$request->isMethodSafe() && $form->handleRequest($request) && $form->->isValid()) {
+    $form->handleRequest($request)
+    
+    if (!$request->isMethodSafe() && $form->isValid()) {
         $this->getDoctrine()->getManager()->persist($post);
         $this->getDoctrine()->getManager()->flush();
         $request->getSession()
